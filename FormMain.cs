@@ -30,7 +30,7 @@ namespace WinRemoteDesktop
         /// <param name="args">参数数组 new string[] { ServerIp, UserName, Password }</param>
         private void CreateAxMsRdpClient(string[] args)
         {
-            string[] ServerIps = args[0].Split(':');
+            string[] ServerIps =  args[0] .Split(':');
 
             Form axMsRdpcForm = new Form();
             axMsRdpcForm.ShowIcon = false;
@@ -42,7 +42,7 @@ namespace WinRemoteDesktop
 
             //Rectangle ScreenArea = Screen.PrimaryScreen.Bounds;
             // 给axMsRdpc取个名字
-            string _axMsRdpcName = string.Format("axMsRdpc_{0}", ServerIps[0].Replace(".", ""));
+            string _axMsRdpcName = string.Format("axMsRdpc_{0}", args[0].Replace(".", ""));
             if (axMsRdpcArray.Contains(_axMsRdpcName))
             {
                 Global.WinMessage("此远程已经连接，请勿重复连接！"); return;

@@ -178,9 +178,8 @@
             // tsMsg
             // 
             this.tsMsg.Name = "tsMsg";
-            this.tsMsg.Size = new System.Drawing.Size(402, 17);
+            this.tsMsg.Size = new System.Drawing.Size(371, 17);
             this.tsMsg.Spring = true;
-            this.tsMsg.Text = "开发者：502832965@qq.com";
             this.tsMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tsItemLabel
