@@ -222,7 +222,15 @@ namespace WinRemoteDesktop
         private void FormMain_SizeChanged(object sender, EventArgs e)
         {
             // 隐藏任务栏图标
-            this.ShowInTaskbar = false;
+            //this.ShowInTaskbar = false;
+            if (WindowState == FormWindowState.Minimized)
+            {
+                //notifyIcon1.Text = "远程桌面管理程序";
+                notifyIcon1.Visible = true;
+                notifyIcon1.ShowBalloonTip(500, "提示标题", "这是气球状提示文本", ToolTipIcon.Info);
+                Hide();
+            }
+
         }
         #endregion
 
@@ -327,10 +335,12 @@ namespace WinRemoteDesktop
         // 托盘菜单-显示窗口
         private void tsMenuNotifyShow_Click(object sender, EventArgs e)
         {
+            Show();
             // 还原窗口
             WindowState = FormWindowState.Normal;
+          
             // 显示任务栏图标
-            this.ShowInTaskbar = true;
+            this.ShowInTaskbar = false;
         }
         // 托盘菜单-退出
         private void tsMenuNotifyExit_Click(object sender, EventArgs e)
